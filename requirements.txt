@@ -10,3 +10,8 @@ fastapi==0.104.1
 pydantic==1.10.9
 uvicorn==0.24.0.post1
 openai==1.3.9
+
+# Fix known markdown dependency conflicts
+pygments==2.15.1
+markdown-it-py==2.2.0
+rich==13.4.2
