@@ -18,11 +18,11 @@ st.write(
 
 
 # Load the model and key components
-with open('../../models/model_and_key_components.pkl', 'rb') as file:
+with open('models/model_and_key_components.pkl', 'rb') as file:
     loaded_components = pickle.load(file)
 
 # Load KMeans model and subtype mapping
-with open('../../models/kmeans_sepsis_model.pkl', 'rb') as file:
+with open('models/kmeans_sepsis_model.pkl', 'rb') as file:
     kmeans_loaded_components = pickle.load(file)
 
 loaded_model = loaded_components['model']
