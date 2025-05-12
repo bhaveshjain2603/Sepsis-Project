@@ -12,7 +12,7 @@ st.markdown("---")
 
 # Welcome Message with Style
 st.write(
-    "🩺 **Welcome to the Sepsis Detection & Subtype Analysis App!**\n\n"
+    "🩺 **Welcome to the Sepsis Detection & Subtype Classification App!**\n\n"
     "Provide the patient's medical measurements below and click on **'Predict Sepsis'** to get a real-time diagnosis and possible subtype recommendation. Let’s assist in early detection and informed treatment decisions."
 )
 
