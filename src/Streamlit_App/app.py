@@ -81,14 +81,13 @@ if st.button("💡 Predict Sepsis"):
         else:
             input_data_scaled_df = preprocess_input_data(input_data)
             sepsis_status = make_predictions(input_data_scaled_df)
+            
+            # Cluster-based Sepsis Subtype Prediction
+            cluster = kmeans.predict(input_data_scaled_df.values)[0]
+            subtype = subtype_map.get(cluster, "Unknown")
 
             if sepsis_status == 'Positive':
                 st.warning(f"The predicted sepsis status is: {sepsis_status}")
-
-                # Cluster-based Sepsis Subtype Prediction
-                cluster = kmeans.predict(input_data_scaled_df.values)[0]
-                subtype = subtype_map.get(cluster, "Unknown")
-                st.markdown(f"### 🔬 Cluster-Based Subtype: `{subtype}`")
 
                 # Get AI Recommendation
                 st.info("🧠 Fetching subtype description and treatment...")
@@ -99,9 +98,6 @@ if st.button("💡 Predict Sepsis"):
             else:
                 st.success(f"The predicted sepsis status is: {sepsis_status}")
                                 
-                # Cluster-based Sepsis Subtype Prediction
-                cluster = kmeans.predict(input_data_scaled_df.values)[0]
-                subtype = subtype_map.get(cluster, "Unknown")
                 st.markdown(f"### 🔬 Cluster-Based Subtype: `{subtype}`")
 
     except Exception as e:
