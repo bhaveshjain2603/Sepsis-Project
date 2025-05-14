@@ -89,6 +89,8 @@ if st.button("💡 Predict Sepsis"):
             if sepsis_status == 'Positive':
                 st.warning(f"The predicted sepsis status is: {sepsis_status}")
 
+                st.markdown(f"### 🔬 Cluster-Based Subtype: `{subtype}`")
+                
                 # Get AI Recommendation
                 st.info("🧠 Fetching subtype description and treatment...")
                 gpt_response = get_sepsis_subtype_and_treatment(subtype)
