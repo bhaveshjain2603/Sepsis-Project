@@ -53,10 +53,12 @@ st.sidebar.info(
 # Sidebar with Data Fields
 st.subheader("📝 Enter Patient Data")
 input_data = {}
+col1, col2 = st.columns(2)
 
-for field, description in data_fields.items():
-    label = f"**{field}** – {description}"
-    input_data[field] = st.number_input(label, value=0.0)
+fields = list(data_fields.items())
+for idx, (field, description) in enumerate(fields):
+    with col1 if idx % 2 == 0 else col2:
+        input_data[field] = st.number_input(description, value=0.0)
 
 
 
