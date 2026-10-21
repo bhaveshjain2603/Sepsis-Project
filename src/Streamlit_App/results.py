@@ -23,7 +23,7 @@ def get_sepsis_subtype_and_treatment(sepsis_type: str):  # Changed to accept sep
         return "API error: GEMINI_API_KEY not found in environment variables."
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('models/gemini-2.5-flash-preview')
+    model = genai.GenerativeModel('gemini-2.0-flash')
 
     prompt_content = f"Provide a short description of '{sepsis_type}' sepsis and outline the basic treatment principles for a patient with this condition. Focus on key characteristics and standard initial management approaches."
 
